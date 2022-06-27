@@ -1,0 +1,88 @@
+const products = [
+  {
+    id: 1,
+    name: 'High-Back Bench',
+    price: '$9.99',
+    image: 'assets/images/products/high-back-bench.jpeg',
+    company: '',
+  },
+  {
+    id: 2,
+    name: 'Albany Table',
+    price: '$9.99',
+    image: 'assets/images/products/albany-table.jpeg',
+    company: '',
+  },
+  {
+    id: 3,
+    name: 'Accent chair',
+    price: '$9.99',
+    image: 'assets/images/products/accent-chair.jpeg',
+    company: '',
+  },
+  {
+    id: 4,
+    name: 'Wooden Table',
+    price: '$9.99',
+    image: 'assets/images/products/wooden-table.jpeg',
+    company: '',
+  },
+  {
+    id: 5,
+    name: 'Dining Table',
+    price: '$9.99',
+    image: 'assets/images/products/dining-table.jpeg',
+    company: '',
+  },
+  {
+    id: 6,
+    name: 'Sofa Set',
+    price: '$9.99',
+    image: 'assets/images/products/sofa-set.jpeg',
+    company: '',
+  },
+  {
+    id: 7,
+    name: 'Modern Bookshelf',
+    price: '$9.99',
+    image: 'assets/images/products/modern-shelf.jpeg',
+    company: '',
+  },
+  {
+    id: 8,
+    name: 'Emperor Bed',
+    price: '$9.99',
+    image: 'assets/images/products/emperor-bed.jpeg',
+    company: '',
+  },
+  {
+    id: 9,
+    name: 'Utopia Sofa',
+    price: '$9.99',
+    image: 'assets/images/products/utopia-sofa.jpeg',
+    company: '',
+  },
+  {
+    id: 10,
+    name: 'Entertainment Center',
+    price: '$9.99',
+    image: 'assets/images/products/entertainment center.jpeg',
+    company: '',
+  },
+  {
+    id: 11,
+    name: 'Albany Sectional',
+    price: '$9.99',
+    image: 'assets/images/products/albany-sectional.jpeg',
+    company: '',
+  },
+  {
+    id: 12,
+    name: 'Leather Sofa',
+    price: '$9.99',
+    image: 'assets/images/products/leather-sofa.jpeg',
+    company: '',
+  },
+];
+
+export default products;
