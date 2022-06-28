@@ -3,21 +3,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaShoppingCart, FaBars } from 'react-icons/fa';
 import blackLogo from '../../assets/images/logos/logo-black.svg';
-import Sidebar from './sidebar';
+import CartMenu from './cartMenu';
 
 function LayoutNavbar() {
-  const [show, setShow] = useState(false);
-
-  function handleClick() {
-    console.log('clicked');
-    setShow(!show);
-
-    if (show) {
-      return <Sidebar />;
-    } else {
-      return {};
-    }
-  }
+  const [showCart, setShowCart] = useState(false);
 
   return (
     <>
@@ -42,7 +31,11 @@ function LayoutNavbar() {
           <Image src={blackLogo} alt="comfy logo" width={100} height={50} />
         </div>
         <div className="">
-          <button onClick={handleClick}>
+          <button
+            onClick={() => {
+              setShowCart(!showCart);
+            }}
+          >
             <FaShoppingCart color="black" size={25} />
           </button>
         </div>
