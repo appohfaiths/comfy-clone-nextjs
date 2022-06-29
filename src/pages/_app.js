@@ -1,12 +1,15 @@
 import '../../styles/globals.css';
-import {
-  ProductsContext,
-  ProductsContextProvider,
-} from '../context/productContext';
+import ProductsContextProvider from '../context/productContext';
 
 function MyApp({ Component, pageProps }) {
   const getLayout = Component.getLayout || ((page) => page);
-  return getLayout(<Component {...pageProps} />);
+  return (
+    <div>
+      <ProductsContextProvider>
+        {getLayout(<Component {...pageProps} />)}
+      </ProductsContextProvider>
+    </div>
+  );
 }
 
 export default MyApp;

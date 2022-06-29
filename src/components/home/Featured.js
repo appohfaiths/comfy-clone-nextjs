@@ -1,8 +1,10 @@
-import React from 'react';
 import Link from 'next/dist/client/link';
 import FeaturedProducts from './FeaturedProducts';
+import { useProduct } from '../../context/productContext';
 
 function Featured() {
+  const product = useProduct();
+
   return (
     <div className="container mx-auto flex flex-col gap-4 items-center">
       <div>
