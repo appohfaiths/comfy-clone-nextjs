@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { FaSearch, FaShoppingCart } from 'react-icons/fa';
 
 function SingleProduct({ name, price, image }) {
-  function addToCart() {
-    console.log('add to cart');
+  function addToCart({ name, price, image }) {
+    console.log(name, price, image);
   }
 
   function displayProduct() {}
@@ -25,7 +25,9 @@ function SingleProduct({ name, price, image }) {
           </button>
           <button
             className="hidden group-hover:block bg-orange-700 p-2 rounded-3xl"
-            onClick={addToCart}
+            onClick={() => {
+              addToCart({ name, price, image });
+            }}
           >
             <FaShoppingCart color="white" size={20} />
           </button>
