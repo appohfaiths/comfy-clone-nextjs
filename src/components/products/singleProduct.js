@@ -6,10 +6,12 @@ import { FaSearch, FaShoppingCart } from 'react-icons/fa';
 function SingleProduct({ name, price, image }) {
   const { show, setShow } = useCart();
   const { count, setCount } = useCart();
+  const { cart, setCart } = useCart();
 
   function handleClick() {
     setCount((prevcount) => prevcount + 1);
     setShow(!show);
+    setCart((cart) => [...cart, { name, price, image }]);
   }
 
   function displayProduct() {}
