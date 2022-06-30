@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaShoppingCart, FaBars } from 'react-icons/fa';
+import Cart from '../cart/cart';
+import { FaBars } from 'react-icons/fa';
 import blackLogo from '../../assets/images/logos/logo-black.svg';
-import CartMenu from './cartMenu';
 
 function LayoutNavbar() {
-  const [showCart, setShowCart] = useState(false);
-
   return (
     <>
       <div className="flex items-center justify-around">
@@ -31,13 +29,7 @@ function LayoutNavbar() {
           <Image src={blackLogo} alt="comfy logo" width={100} height={50} />
         </div>
         <div className="">
-          <button
-            onClick={() => {
-              setShowCart(!showCart);
-            }}
-          >
-            <FaShoppingCart color="black" size={25} />
-          </button>
+          <Cart />
         </div>
       </div>
     </>

@@ -1,10 +1,15 @@
 import React, { useState, useContext } from 'react';
 import Link from 'next/link';
+import { useCart } from '../../context/cartContext';
 import { FaSearch, FaShoppingCart } from 'react-icons/fa';
 
 function SingleProduct({ name, price, image }) {
-  function addToCart({ name, price, image }) {
-    console.log(name, price, image);
+  const { show, setShow } = useCart();
+  const { count, setCount } = useCart();
+
+  function handleClick() {
+    setCount((prevcount) => prevcount + 1);
+    setShow(!show);
   }
 
   function displayProduct() {}
@@ -25,9 +30,7 @@ function SingleProduct({ name, price, image }) {
           </button>
           <button
             className="hidden group-hover:block bg-orange-700 p-2 rounded-3xl"
-            onClick={() => {
-              addToCart({ name, price, image });
-            }}
+            onClick={handleClick}
           >
             <FaShoppingCart color="white" size={20} />
           </button>
