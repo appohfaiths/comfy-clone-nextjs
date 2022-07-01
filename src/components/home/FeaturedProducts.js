@@ -7,9 +7,9 @@ function FeaturedProducts() {
 
   return (
     <div className="grid grid-col-1 gap-4 lg:grid-cols-3">
-      {product.slice(0, 3).map(({ name, price, image }, i) => (
+      {product.slice(0, 3).map((item, i) => (
         <div key={i} className="">
-          <SingleProduct name={name} price={price} image={image} />
+          <SingleProduct {...item} />
         </div>
       ))}
     </div>

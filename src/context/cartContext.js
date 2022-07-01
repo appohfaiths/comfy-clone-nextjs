@@ -5,20 +5,18 @@ const CartContext = createContext({});
 export function CartContextProvider({ children }) {
   const [show, setShow] = useState(false);
   const [count, setCount] = useState(0);
-
   const [cart, setCart] = useState([]);
 
-  const addItem = (item) => {};
-  const updateItem = (itemID, amount) => {};
-  const removeItem = (itemID) => {};
+  useEffect(() => {
+    const localCart = JSON.parse(localStorage.getItem('localCart'));
+    if (localCart) {
+      setCart(localCart);
+    }
+  }, []);
 
   useEffect(() => {
-    let localCart = localStorage.getItem('cart');
-
-    localCart = JSON.parse(localCart);
-
-    if (localCart) setCart(localCart);
-  }, []);
+    localStorage.setItem('localCart', JSON.stringify(cart));
+  }, [cart]);
 
   return (
     <CartContext.Provider

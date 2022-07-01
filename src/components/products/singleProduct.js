@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useCart } from '../../context/cartContext';
 import { FaSearch, FaShoppingCart } from 'react-icons/fa';
 
-function SingleProduct({ name, price, image }) {
+function SingleProduct({ name, price, image, id }) {
   const { show, setShow } = useCart();
   const { count, setCount } = useCart();
   const { cart, setCart } = useCart();
@@ -13,6 +13,8 @@ function SingleProduct({ name, price, image }) {
     setShow(!show);
     setCart((cart) => [...cart, { name, price, image }]);
   }
+
+  function handleSearchClick() {}
 
   function displayProduct() {}
 
@@ -24,8 +26,13 @@ function SingleProduct({ name, price, image }) {
         </div>
         <div className=" absolute top-32 left-36 grid grid-cols-2 gap-4 align-middle">
           <button className="hidden group-hover:block bg-orange-700 p-2 rounded-3xl">
-            <Link href="/productDetails">
-              <a>
+            <Link
+              href={{
+                pathname: '/products/[productid]',
+                query: { productid: id },
+              }}
+            >
+              <a onClick={handleSearchClick}>
                 <FaSearch color="white" size={20} />
               </a>
             </Link>

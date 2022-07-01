@@ -1,11 +1,11 @@
-import { useContext } from 'react';
-import data from '../../../public/json/products';
 import SingleProduct from './singleProduct';
+import { useProduct } from '../../context/productContext';
 
 function Products() {
+  const product = useProduct();
   return (
     <div className="grid grid-col-1 gap-4 lg:grid-cols-3">
-      {data.map((item, i) => (
+      {product.map((item, i) => (
         <div key={i} className="">
           <SingleProduct {...item} />
         </div>
