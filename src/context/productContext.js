@@ -1,11 +1,12 @@
 import { useState, createContext, useContext } from 'react';
-import products from '../../public/json/products';
+import allproducts from '../../public/json/products';
 
 const ProductsContext = createContext({});
 
 export default function ProductsContextProvider({ children }) {
+  const [products, setProducts] = useState(allproducts);
   return (
-    <ProductsContext.Provider value={products}>
+    <ProductsContext.Provider value={{ products, setProducts }}>
       {children}
     </ProductsContext.Provider>
   );

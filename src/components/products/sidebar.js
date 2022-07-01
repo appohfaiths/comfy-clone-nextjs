@@ -1,19 +1,31 @@
 import { useState } from 'react';
+import { useProduct } from '../../context/productContext';
 
 function Sidebar({}) {
+  const { products, setProducts } = useProduct();
   const [searchTerm, setSearchTerm] = useState('');
   const [price, setPrice] = useState(50);
+  const [filterby, setFilterby] = useState('');
 
   function search() {
-    console.log(searchTerm);
+    setProducts(
+      products.filter((product) =>
+        product.name.toLowerCase().startsWith(searchTerm.toLowerCase())
+      )
+    );
   }
 
   function handleClickAll() {
-    search();
+    setProducts(products.filter((product) => product.id > 0));
   }
 
-  function handleClick({ name }) {
-    console.log(name);
+  function handleClick(e) {
+    let word = e.target.innerHTML.toLowerCase();
+    setProducts(
+      products.filter((product) =>
+        product.company.toLowerCase().includes(word.toLowerCase())
+      )
+    );
   }
 
   return (
@@ -29,7 +41,9 @@ function Sidebar({}) {
           <input
             type="search"
             placeholder="Search..."
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={(e) => {
+              setSearchTerm(e.target.value), search();
+            }}
           />
         </form>
       </div>

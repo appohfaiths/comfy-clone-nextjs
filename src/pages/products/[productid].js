@@ -2,17 +2,15 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { useProduct } from '../../context/productContext';
+// import products from '../../../public/json/products';
 import PrimaryLayout from '../../components/layouts/primaryLayout';
 
 function Product() {
-  const product = useProduct();
+  const { products, setProducts } = useProduct();
   const router = useRouter();
   const query = router.query;
   const id = parseInt(query.productid);
-  const item = product[id - 1];
-
-  console.log(item);
-  console.log(id);
+  const item = products[id - 1];
 
   return (
     <div className="grid grid-cols-1 gap-4 justify-items-center mt-20 lg:grid-cols-2">
@@ -20,9 +18,9 @@ function Product() {
         <img src={item.image} height={500} width={500} />
       </div>
       <div className="">
-        <h1>{item.name}</h1>
-        <h4>{item.company}</h4>
-        <h4>{item.price}</h4>
+        {item.name && <h1>{item.name}</h1>}
+        {item.company && <h4>BY {item.company}</h4>}
+        {item.price && <h4>{item.price}</h4>}
         <div className="">Colours</div>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum
