@@ -2,7 +2,7 @@ repo_name: appohfaiths/comfy-clone-nextjs
 report_id: c25732be636388056d2cc00ba9c63c57
 version: 0.1
 repo_type: Public
-timestamp: '2024-01-23T13:36:41+00:00'
+timestamp: '2024-02-29T19:34:55+00:00'
 requested_by: appohfaiths
 provider: github
 branch: main
@@ -42,7 +42,7 @@ tools:
   last_updated_by: Faith S. Appoh
   last_updated_on: 2022-06-27 21:50:08.000000000 Z
 - name: Next.js
-  description: 'A small framework for server-rendered universal JavaScript apps '
+  description: A small framework for server-rendered universal JavaScript apps
   website_url: https://nextjs.org/
   version: 12.1.6
   open_source: true
